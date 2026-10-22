@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Accommodation Finder Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        'primary-hover': '#2563eb',
+                        accent: '#10b981',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        'property-featured': '#fbbf24',
+                        'property-available': '#10b981',
+                        'property-pending': '#f59e0b',
+                        'property-rented': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(16, 185, 129, 0.95));
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="gradient-primary p-2 rounded-lg">
+                        <i class="fas fa-home text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Accommodation<span class="text-primary">Finder</span></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Map View</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 h-4 w-4 bg-accent text-white text-xs rounded-full flex items-center justify-center">2</span>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-comment"></i>
+                    </button>
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </button>
+                    <button class="px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90">
+                        List Property
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register Section -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="gradient-primary p-3 rounded-lg">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Create Your Account</h2>
+                <p class="text-gray-600">Join AccommodationFinder and start your journey</p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <!-- User Type Tabs -->
+                <div class="flex mb-6 bg-gray-100 rounded-lg p-1">
+                    <button class="flex-1 py-2 px-4 rounded-md bg-white text-gray-900 font-medium shadow-sm" id="tenant-tab">
+                        <i class="fas fa-user mr-2"></i>Tenant
+                    </button>
+                    <button class="flex-1 py-2 px-4 rounded-md text-gray-600 font-medium" id="owner-tab">
+                        <i class="fas fa-home mr-2"></i>House Owner
+                    </button>
+                </div>
+
+                <!-- Tenant Registration Form -->
+                <form class="space-y-6" id="tenant-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your first name"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your last name"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+                            <input 
+                                type="email" 
+                                required
+                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <div class="relative">
+                            <i class="fas fa-phone absolute left-3 top-3 text-gray-400"></i>
+                            <input 
+                                type="tel" 
+                                required
+                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                                <input 
+                                    type="password" 
+                                    required
+                                    class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Create a password"
+                                />
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                                <input 
+                                    type="password" 
+                                    required
+                                    class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Confirm your password"
+                                />
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Location</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Select your preferred area</option>
+                            <option>Dhanmondi</option>
+                            <option>Gulshan</option>
+                            <option>Banani</option>
+                            <option>Uttara</option>
+                            <option>Mirpur</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="terms-tenant"
+                            required
+                            class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                        />
+                        <label for="terms-tenant" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-primary hover:text-primary-hover">Terms of Service</a> and <a href="#" class="text-primary hover:text-primary-hover">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full gradient-primary text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
+                        Create Account
+                    </button>
+                </form>
+
+                <!-- Owner Registration Form (Hidden by default) -->
+                <form class="space-y-6 hidden" id="owner-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your first name"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                            <input 
+                                type="text" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your last name"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+                            <input 
+                                type="email" 
+                                required
+                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <div class="relative">
+                            <i class="fas fa-phone absolute left-3 top-3 text-gray-400"></i>
+                            <input 
+                                type="tel" 
+                                required
+                                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                                <input 
+                                    type="password" 
+                                    required
+                                    class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Create a password"
+                                />
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+                            <div class="relative">
+                                <i class="fas fa-lock absolute left-3 top-3 text-gray-400"></i>
+                                <input 
+                                    type="password" 
+                                    required
+                                    class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Confirm your password"
+                                />
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                        <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Select property type</option>
+                            <option>Apartment</option>
+                            <option>House</option>
+                            <option>Studio</option>
+                            <option>Villa</option>
+                            <option>Commercial</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">NID Number</label>
+                        <input 
+                            type="text" 
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Enter your NID number"
+                        />
+                    </div>
+
+                    <div class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="terms-owner"
+                            required
+                            class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                        />
+                        <label for="terms-owner" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-primary hover:text-primary-hover">Terms of Service</a> and <a href="#" class="text-primary hover:text-primary-hover">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full gradient-primary text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
+                        Create Owner Account
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                </div>
+
+                <!-- Social Registration -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        Google
+                    </button>
+                    <button class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                        <i class="fab fa-facebook text-blue-600 mr-2"></i>
+                        Facebook
+                    </button>
+                </div>
+
+                <!-- Login Link -->
+                <div class="text-center mt-6">
+                    <p class="text-gray-600">
+                        Already have an account? 
+                        <a href="login.html" class="text-primary hover:text-primary-hover font-medium">
+                            Sign in here
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="gradient-primary p-2 rounded-lg">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Accommodation<span class="text-primary">Finder</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        Find your perfect accommodation across Bangladesh with our comprehensive property listings.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="properties.html" class="hover:text-white">Properties</a></li>
+                        <li><a href="#" class="hover:text-white">Map Search</a></li>
+                        <li><a href="#" class="hover:text-white">List Property</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <a href="login.html" class="w-full px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-opacity block text-center">
+                        <i class="fas fa-user mr-2"></i>House Owner Login
+                    </a>
+                    <a href="owner-dashboard.html" class="w-full px-4 py-2 border border-gray-600 text-white rounded-lg hover:bg-gray-800 transition-colors block text-center mt-2">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Owner Dashboard
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AccommodationFinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        const tenantTab = document.getElementById('tenant-tab');
+        const ownerTab = document.getElementById('owner-tab');
+        const tenantForm = document.getElementById('tenant-form');
+        const ownerForm = document.getElementById('owner-form');
+
+        tenantTab.addEventListener('click', () => {
+            tenantTab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+            tenantTab.classList.remove('text-gray-600');
+            ownerTab.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
+            ownerTab.classList.add('text-gray-600');
+            tenantForm.classList.remove('hidden');
+            ownerForm.classList.add('hidden');
+        });
+
+        ownerTab.addEventListener('click', () => {
+            ownerTab.classList.add('bg-white', 'text-gray-900', 'shadow-sm');
+            ownerTab.classList.remove('text-gray-600');
+            tenantTab.classList.remove('bg-white', 'text-gray-900', 'shadow-sm');
+            tenantTab.classList.add('text-gray-600');
+            ownerForm.classList.remove('hidden');
+            tenantForm.classList.add('hidden');
+        });
+    </script>
+</body>
+</html> 

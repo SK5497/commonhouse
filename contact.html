@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Accommodation Finder Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        'primary-hover': '#2563eb',
+                        accent: '#10b981',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        'property-featured': '#fbbf24',
+                        'property-available': '#10b981',
+                        'property-pending': '#f59e0b',
+                        'property-rented': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(16, 185, 129, 0.95));
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="gradient-primary p-2 rounded-lg">
+                        <i class="fas fa-home text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Accommodation<span class="text-primary">Finder</span></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Map View</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="text-primary font-medium">Contact</a>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 h-4 w-4 bg-accent text-white text-xs rounded-full flex items-center justify-center">2</span>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-comment"></i>
+                    </button>
+                    <a href="login.html" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                    <button class="px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90">
+                        List Property
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-primary to-accent text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl text-white/90 max-w-3xl mx-auto">
+                Get in touch with our team. We're here to help you find your perfect rental home.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Form & Info Section -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input 
+                                    type="text" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Enter your first name"
+                                />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input 
+                                    type="text" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                    placeholder="Enter your last name"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input 
+                                type="email" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input 
+                                type="tel" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option>Select a subject</option>
+                                <option>General Inquiry</option>
+                                <option>Property Listing</option>
+                                <option>Technical Support</option>
+                                <option>Partnership</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea 
+                                rows="5" 
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                placeholder="Tell us how we can help you..."
+                            ></textarea>
+                        </div>
+                        <button type="submit" class="w-full gradient-primary text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Office Locations -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Our Offices</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="gradient-primary p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Dhaka Head Office</h4>
+                                    <p class="text-gray-600 text-sm">House #123, Road #12, Banani, Dhaka 1213</p>
+                                    <p class="text-gray-600 text-sm">Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="gradient-primary p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Chittagong Branch</h4>
+                                    <p class="text-gray-600 text-sm">Office #45, Agrabad Commercial Area</p>
+                                    <p class="text-gray-600 text-sm">Chittagong, Bangladesh</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Methods -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="gradient-primary p-3 rounded-lg">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Phone</p>
+                                    <p class="font-semibold text-gray-900">+880 1234-567890</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="gradient-primary p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Email</p>
+                                    <p class="font-semibold text-gray-900">info@toletbd.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="gradient-primary p-3 rounded-lg">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Business Hours</p>
+                                    <p class="font-semibold text-gray-900">Sun-Thu: 9:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="gradient-primary p-3 rounded-lg text-white hover:opacity-90 transition-opacity">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="gradient-primary p-3 rounded-lg text-white hover:opacity-90 transition-opacity">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="gradient-primary p-3 rounded-lg text-white hover:opacity-90 transition-opacity">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="gradient-primary p-3 rounded-lg text-white hover:opacity-90 transition-opacity">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Find answers to common questions about our services
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">How do I list my property?</h3>
+                        <p class="text-gray-600 text-sm">
+                            Simply click on "List Property" and fill out the form with your property details. 
+                            Our team will review and publish your listing within 24 hours.
+                        </p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">Is there a fee for listing properties?</h3>
+                        <p class="text-gray-600 text-sm">
+                            Basic listings are free. Premium listings with enhanced visibility and features 
+                            are available for a small fee.
+                        </p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">How do I contact property owners?</h3>
+                        <p class="text-gray-600 text-sm">
+                            Click on "Contact Owner" on any property listing to send a message directly 
+                            to the property owner through our secure messaging system.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">Are all properties verified?</h3>
+                        <p class="text-gray-600 text-sm">
+                            We verify all property listings through our team of local experts to ensure 
+                            accuracy and authenticity of information provided.
+                        </p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">Can I schedule property viewings?</h3>
+                        <p class="text-gray-600 text-sm">
+                            Yes, you can schedule viewings directly through our platform. Property owners 
+                            will receive your request and can confirm the appointment.
+                        </p>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">What areas do you cover?</h3>
+                        <p class="text-gray-600 text-sm">
+                            We cover all major cities and towns across Bangladesh, including Dhaka, 
+                            Chittagong, Sylhet, Rajshahi, Khulna, Barisal, Rangpur, and Mymensingh.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="gradient-primary p-2 rounded-lg">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Accommodation<span class="text-primary">Finder</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        Find your perfect accommodation across Bangladesh with our comprehensive property listings.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="properties.html" class="hover:text-white">Properties</a></li>
+                        <li><a href="#" class="hover:text-white">Map Search</a></li>
+                        <li><a href="#" class="hover:text-white">List Property</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <a href="login.html" class="w-full px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-opacity block text-center">
+                        <i class="fas fa-user mr-2"></i>House Owner Login
+                    </a>
+                    <a href="owner-dashboard.html" class="w-full px-4 py-2 border border-gray-600 text-white rounded-lg hover:bg-gray-800 transition-colors block text-center mt-2">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Owner Dashboard
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AccommodationFinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

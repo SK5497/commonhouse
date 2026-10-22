@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious 3BHK Apartment in Dhanmondi - Accommodation Finder Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        'primary-hover': '#2563eb',
+                        accent: '#10b981',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        'property-featured': '#fbbf24',
+                        'property-available': '#10b981',
+                        'property-pending': '#f59e0b',
+                        'property-rented': '#6b7280'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-primary {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(16, 185, 129, 0.95));
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="gradient-primary p-2 rounded-lg">
+                        <i class="fas fa-home text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Accommodation<span class="text-primary">Finder</span></span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="properties.html" class="text-gray-700 hover:text-primary transition-colors">Properties</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Map View</a>
+                    <a href="about.html" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bell"></i>
+                        <span class="absolute -top-1 -right-1 h-4 w-4 bg-accent text-white text-xs rounded-full flex items-center justify-center">2</span>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="p-2 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-comment"></i>
+                    </button>
+                    <a href="login.html" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                    <button class="px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90">
+                        List Property
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Property Images -->
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Main Image -->
+                <div class="lg:col-span-2">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <img 
+                            src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=500&fit=crop" 
+                            alt="Property Main Image"
+                            class="w-full h-96 object-cover"
+                        />
+                        <div class="absolute top-4 left-4 flex flex-col gap-2">
+                            <span class="bg-property-featured text-white px-3 py-1 rounded text-sm font-medium">
+                                Featured
+                            </span>
+                            <span class="bg-property-available text-white px-3 py-1 rounded text-sm font-medium">
+                                Available
+                            </span>
+                        </div>
+                        <div class="absolute top-4 right-4 flex flex-col gap-2">
+                            <button class="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-gray-600"></i>
+                            </button>
+                            <button class="w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-share text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Images -->
+                <div class="space-y-4">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img 
+                            src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=200&fit=crop" 
+                            alt="Property Image 2"
+                            class="w-full h-32 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        />
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img 
+                            src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=200&fit=crop" 
+                            alt="Property Image 3"
+                            class="w-full h-32 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        />
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img 
+                            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop" 
+                            alt="Property Image 4"
+                            class="w-full h-32 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Details -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Property Header -->
+                <div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-900 mb-2">
+                                Luxurious 3BHK Apartment in Dhanmondi
+                            </h1>
+                            <div class="flex items-center gap-4 text-gray-600">
+                                <div class="flex items-center gap-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Dhanmondi 15, Dhaka</span>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="font-medium">4.8</span>
+                                    <span>(24 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-primary">৳45,000</div>
+                            <div class="text-gray-600">per month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-gray-50 rounded-xl">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gray-900">3</div>
+                        <div class="text-sm text-gray-600">Bedrooms</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gray-900">2</div>
+                        <div class="text-sm text-gray-600">Bathrooms</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gray-900">1,200</div>
+                        <div class="text-sm text-gray-600">sq ft</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-gray-900">5th</div>
+                        <div class="text-sm text-gray-600">Floor</div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Description</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        This beautifully maintained 3-bedroom apartment is located in the heart of Dhanmondi, 
+                        one of Dhaka's most prestigious residential areas. The apartment features modern amenities, 
+                        spacious rooms, and a perfect blend of comfort and luxury.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mt-4">
+                        The apartment comes fully furnished with high-quality furniture and appliances. 
+                        The kitchen is equipped with modern appliances, and the living area provides 
+                        ample space for relaxation and entertainment.
+                    </p>
+                </div>
+
+                <!-- Amenities -->
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Amenities</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-wifi text-primary"></i>
+                            <span>High-speed WiFi</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-car text-primary"></i>
+                            <span>Parking Space</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <span>24/7 Security</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-snowflake text-primary"></i>
+                            <span>Air Conditioning</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-tshirt text-primary"></i>
+                            <span>Washing Machine</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-tv text-primary"></i>
+                            <span>Cable TV</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-elevator text-primary"></i>
+                            <span>Elevator</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-bolt text-primary"></i>
+                            <span>Backup Power</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Location</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl">
+                        <div class="flex items-start gap-4">
+                            <div class="gradient-primary p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">Dhanmondi 15, Dhaka</h3>
+                                <p class="text-gray-600 mb-4">
+                                    Located in the prestigious Dhanmondi area, this property offers easy access to 
+                                    shopping centers, restaurants, schools, and hospitals. The area is well-connected 
+                                    with public transportation.
+                                </p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <span class="font-medium text-gray-900">Nearby:</span>
+                                        <ul class="text-gray-600 mt-1 space-y-1">
+                                            <li>• Dhanmondi Lake (5 min walk)</li>
+                                            <li>• Shopping Centers (10 min drive)</li>
+                                            <li>• Hospitals (15 min drive)</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <span class="font-medium text-gray-900">Transport:</span>
+                                        <ul class="text-gray-600 mt-1 space-y-1">
+                                            <li>• Bus Stop (2 min walk)</li>
+                                            <li>• Rickshaw Stand (1 min walk)</li>
+                                            <li>• Main Road Access</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews -->
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Reviews</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-6 rounded-xl border border-gray-200">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-3">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" 
+                                        alt="Reviewer"
+                                        class="w-10 h-10 rounded-full object-cover"
+                                    />
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Ahmed Rahman</div>
+                                        <div class="flex items-center gap-1 text-sm">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-500">2 days ago</div>
+                            </div>
+                            <p class="text-gray-600">
+                                Excellent apartment with all modern amenities. The owner is very responsive 
+                                and the location is perfect for my needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Contact Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Contact Owner</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <img 
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face" 
+                                alt="Owner"
+                                class="w-12 h-12 rounded-full object-cover"
+                            />
+                            <div>
+                                <div class="font-semibold text-gray-900">Karim Hassan</div>
+                                <div class="text-sm text-gray-600">Property Owner</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <button class="w-full gradient-primary text-white py-3 rounded-lg hover:opacity-90 transition-opacity font-medium">
+                                <i class="fas fa-phone mr-2"></i>Call Now
+                            </button>
+                            <button class="w-full border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                <i class="fas fa-comment mr-2"></i>Send Message
+                            </button>
+                            <button class="w-full border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                                <i class="fas fa-calendar mr-2"></i>Schedule Viewing
+                            </button>
+                            <a href="purchase-property.html" class="w-full bg-accent text-white py-3 rounded-lg hover:opacity-90 transition-opacity text-center block font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i>Purchase Property
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Details Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Property Details</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Property Type:</span>
+                            <span class="font-medium">Apartment</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Available From:</span>
+                            <span class="font-medium">Immediate</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Minimum Stay:</span>
+                            <span class="font-medium">12 months</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Security Deposit:</span>
+                            <span class="font-medium">৳90,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Utilities:</span>
+                            <span class="font-medium">Included</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Furnished:</span>
+                            <span class="font-medium">Yes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Properties -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Similar Properties</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <img 
+                                src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=80&h=60&fit=crop" 
+                                alt="Similar Property"
+                                class="w-20 h-16 object-cover rounded"
+                            />
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-900 text-sm">2BHK in Gulshan</div>
+                                <div class="text-primary font-medium text-sm">৳35,000/month</div>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <img 
+                                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=80&h=60&fit=crop" 
+                                alt="Similar Property"
+                                class="w-20 h-16 object-cover rounded"
+                            />
+                            <div class="flex-1">
+                                <div class="font-semibold text-gray-900 text-sm">4BHK in Uttara</div>
+                                <div class="text-primary font-medium text-sm">৳55,000/month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="gradient-primary p-2 rounded-lg">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">Accommodation<span class="text-primary">Finder</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        Find your perfect accommodation across Bangladesh with our comprehensive property listings.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="properties.html" class="hover:text-white">Properties</a></li>
+                        <li><a href="#" class="hover:text-white">Map Search</a></li>
+                        <li><a href="#" class="hover:text-white">List Property</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <a href="login.html" class="w-full px-4 py-2 gradient-primary text-white rounded-lg hover:opacity-90 transition-opacity block text-center">
+                        <i class="fas fa-user mr-2"></i>House Owner Login
+                    </a>
+                    <a href="owner-dashboard.html" class="w-full px-4 py-2 border border-gray-600 text-white rounded-lg hover:bg-gray-800 transition-colors block text-center mt-2">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Owner Dashboard
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AccommodationFinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
